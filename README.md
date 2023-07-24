@@ -50,3 +50,28 @@ DB_DATABASE = "bharat_go" //the db_name you choose in 1st step
 DB_PASSWORD = "root123" //password of your PostgreSQL database
 DB_PORT = 5432 // replace with the port on which postgresql is running.
    ```
+# API endpoints : 
+
+### POST /auth/register
+
+Register a new user.
+
+- **Method:** POST
+- **Endpoint:** /auth/register
+
+#### Request Body
+
+| Field     | Type     | Description                   |
+|-----------|----------|-------------------------------|
+| username  | string   | User's desired username       |
+| email     | string   | User's email address          |
+| password  | string   | User's password (plaintext)    |
+
+#### Response
+
+Upon successful registration, the API will return a response with status code 200 and the following JSON data:
+
+```json
+{
+  "message": "User registration successful"
+}

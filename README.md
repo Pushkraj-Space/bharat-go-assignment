@@ -56,7 +56,8 @@ npm test
 ```
 
 ## API Documentation : 
-
+* set bearer token in postman after login of a particular user. To use /users api's.
+  
 ### POST /auth/register
 
 Register a new user.
@@ -87,7 +88,7 @@ Authenticate and generate a JWT token for the user.
 
 - **Method:** POST
 - **Endpoint:** /auth/login
-
+  
 #### Request Body
 
 | Field     | Type     | Description                   |
@@ -116,7 +117,8 @@ Retrieve a list of all users.
 
 - **Method:** GET
 - **Endpoint:** /users
-
+- **Authentication required**
+  
 #### Response
 
 Upon successful retrieval, the API will return a response with status code 200 and the following JSON data:
@@ -143,7 +145,8 @@ Retrieve a specific user by their ID.
 
 - **Method:** GET
 - **Endpoint:** /users/:id
-
+- **Authentication required**
+  
 #### Response
 
 Upon successful retrieval, the API will return a response with status code 200 and the following JSON data:
@@ -156,3 +159,69 @@ Upon successful retrieval, the API will return a response with status code 200 a
     "id": "user_id"
 }
 ```
+## POST /users
+
+Create a new user.
+
+- **Method:** POST
+- **Endpoint:** /users
+- **Authentication required**
+  
+#### Request Body
+
+| Field     | Type     | Description                   |
+|-----------|----------|-------------------------------|
+| name  | string   | User's desired username       |
+| email     | string   | User's email address          |
+| password  | string   | User's password     |
+
+#### Response
+
+Upon successful creation, the API will return a response with status code 201 and the following JSON data:
+
+```json
+{
+    "message": "User registration successful"
+}
+```
+## PUT /users/:id
+
+Update an existing user by their ID.
+
+- **Method:** PUT
+- **Endpoint:** /users/:id
+- **Authentication required**
+  
+#### Request Body
+
+| Field     | Type     | Description                   |
+|-----------|----------|-------------------------------|
+| name  | string   | Updated username              |
+
+#### Response
+
+Upon successful update, the API will return a response with status code 200 and the following JSON data:
+
+```json
+{
+    "message": "User updated successfully"
+}
+```
+## DELETE /users/:id
+
+Delete a user by their ID.
+
+- **Method:** DELETE
+- **Endpoint:** /users/:id
+- **Authentication required**
+  
+#### Response
+
+Upon successful deletion, the API will return a response with status code 200 and the following JSON data:
+
+```json
+{
+    "message": "User deleted successfully"
+}
+```
+#### Thank you 

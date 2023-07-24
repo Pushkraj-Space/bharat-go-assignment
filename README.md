@@ -41,12 +41,12 @@ postgres=# psql -U username -d db_name -f "%path%\backup.sql";
 * Replace %path% with the actual path to your cloned folder.
 
 3. **Setup .env file** according to your local settings.
-   ```
-   PORT = 8081 // choose the port for server to run
-   TOKEN_SECRET = "your secret string"
-   DB_USER = "postgres" //your PostgreSQL username
-   DB_HOST = "localhost" 
-   DB_DATABASE = "bharat_go" //the db_name you choose in 1st step
-   DB_PASSWORD = "root123" //password of your PostgreSQL database
-   DB_PORT = 5432 // replace with the port on which postgresql is running.
+```
+PORT = 8081 // choose the port for server to run
+TOKEN_SECRET = "your secret string"
+DB_USER = "postgres" //your PostgreSQL username
+DB_HOST = "localhost" 
+DB_DATABASE = "bharat_go" //the db_name you choose in 1st step
+DB_PASSWORD = "root123" //password of your PostgreSQL database
+DB_PORT = 5432 // replace with the port on which postgresql is running.
    ```

@@ -137,3 +137,22 @@ Upon successful retrieval, the API will return a response with status code 200 a
     }
 ]
 ```
+## GET /users/:id
+
+Retrieve a specific user by their ID.
+
+- **Method:** GET
+- **Endpoint:** /users/:id
+
+#### Response
+
+Upon successful retrieval, the API will return a response with status code 200 and the following JSON data:
+
+```json
+{
+    "name": "user_name",
+    "email": "user_mail",
+    "password": "user_password",
+    "id": "user_id"
+}
+```

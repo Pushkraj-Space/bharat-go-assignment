@@ -12,8 +12,21 @@ Version of PostgreSQL:
 psql --version
 psql (PostgreSQL) 15.3
 ```
+## Setup Database
+1. **Create a database** with a name of your choice in postgres.
+```
+postgres=# CREATE DATABASE db_name;
+```
+2. **Import SQL file** you will find backup.sql file in our cloned folder "bharat-go-assignment" .
+   in terminal
+```
+postgres=# psql -U username -d db_name -f "%path%\backup.sql";
+```
+* Replace username with your PostgreSQL database username.
+* Replace db_name with the name of the database you want to import the SQL file into.
+Replace %path% with the actual path to your cloned folder.
 
-## Starting Development
+## Setup Server
 Open your terminal (cmd, powershell, git bash)
 Clone this repository by :
 ```

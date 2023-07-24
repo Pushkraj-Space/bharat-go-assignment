@@ -38,4 +38,6 @@ postgres=# psql -U username -d db_name -f "%path%\backup.sql";
 ```
 * Replace username with your PostgreSQL database username.
 * Replace db_name with the name of the database you want to import the SQL file into.
-Replace %path% with the actual path to your cloned folder.
+* Replace %path% with the actual path to your cloned folder.
+
+3. **Setup .env file** according to your local settings.

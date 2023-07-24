@@ -80,3 +80,33 @@ Upon successful registration, the API will return a response with status code 20
 {
   "message": "User registration successful"
 }
+```
+## POST /auth/login
+
+Authenticate and generate a JWT token for the user.
+
+- **Method:** POST
+- **Endpoint:** /auth/login
+
+#### Request Body
+
+| Field     | Type     | Description                   |
+|-----------|----------|-------------------------------|
+| email     | string   | User's registered email       |
+| password  | string   | User's password (plaintext)    |
+
+#### Response
+
+Upon successful login, the API will return a response with status code 200 and the following JSON data:
+
+```json
+{
+  "message": "User login successful",
+  "token": "jwt_token",
+  "user": {
+    "name" : "user_name",
+    "email" : "user_mail",
+    "id" : "user_id"
+  } 
+}
+```

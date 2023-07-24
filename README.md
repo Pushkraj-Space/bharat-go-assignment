@@ -37,7 +37,16 @@ postgres=# CREATE DATABASE db_name;
 postgres=# psql -U username -d db_name -f "%path%\backup.sql";
 ```
 * Replace username with your PostgreSQL database username.
-* Replace db_name with the name of the database you want to import the SQL file into.
+* Replace db_name with the name you choose in 1st step.
 * Replace %path% with the actual path to your cloned folder.
 
 3. **Setup .env file** according to your local settings.
+   ```
+   PORT = 8081 // choose the port for server to run
+   TOKEN_SECRET = "your secret string"
+   DB_USER = "your PostgreSQL username"
+   DB_HOST = "localhost"
+   DB_DATABASE = "the db_name you choose in 1st step"
+   DB_PASSWORD = "password of your PostgreSQL database"
+   DB_PORT = 5432 // replace with the port on which postgresql is running.
+   ```

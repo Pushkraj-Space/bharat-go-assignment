@@ -12,7 +12,7 @@ const userRoute = require('./routes/users');
 app.use('/users', userRoute);
 
 app.get('/', (req, res) => {
-    res.status(200).json({ msg : "Welcome to Bharat Go"});
+    res.status(200).json({ message : "Welcome to Bharat Go"});
 });
 
 app.use('*', (req, res) => {

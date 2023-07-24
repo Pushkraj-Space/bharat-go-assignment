@@ -22,8 +22,8 @@ describe('GET /', () => {
     const response = await request(app).get('/');
     
     expect(response.statusCode).to.equal(200);
-    expect(response.body).to.have.property('msg');
-    expect(response.body.msg).to.equal('Welcome to Bharat Go');    
+    expect(response.body).to.have.property('message');
+    expect(response.body.message).to.equal('Welcome to Bharat Go');    
   });
 });
 

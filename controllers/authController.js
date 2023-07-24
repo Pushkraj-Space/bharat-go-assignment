@@ -12,21 +12,21 @@ module.exports.newUser = async (req, res) => {
     try{
         const {name,email,password} = req.body;
         if(!name || name.trim() == ""){
-            return res.status(400).json({msg : "Name can't be empty"});
+            return res.status(400).json({message : "Name can't be empty"});
         }else if(!password || password.trim() == ""){
-            return res.status(400).json({msg : "Password can't be empty"});
+            return res.status(400).json({message : "Password can't be empty"});
         }else if(isEmailValid(email) == false){
-            return res.status(422).json({msg : "Enter valid email format"});
+            return res.status(422).json({message : "Enter valid email format"});
         }
         if(await Auth.isEmailExists(email) == true){
-            return res.status(409).json({msg : "Email already exists, try with different email"});
+            return res.status(409).json({message : "Email already exists, try with different email"});
         }
         const userData = {
             ...req.body,
             password : await bcrypt.hash(req.body.password, 12)
         }
-        const userCreated = await Auth.newUser(userData);
-        res.status(201).json({userCreated});
+        await Auth.newUser(userData);
+        res.status(201).json({message : "User registration successful"});
     }catch(err){
         console.log(err);
         res.status(500).json({error : "Internal server error"})
@@ -39,12 +39,11 @@ module.exports.loginUser = async (req, res) => {
         const {email, password} = req.body;
         const userData = await Auth.varifyUser(email,password);
         if(userData.length == 0){
-            return res.status(401).json({msg : "Email(username) and password does not match"});
+            return res.status(401).json({message : "Email(username) and password does not match"});
         }
         delete userData.password;
-        let id = userData.id;
         let accessToken = jwt.sign({...userData} , process.env.TOKEN_SECRET,{})
-        return res.status(200).json({id,accessToken});
+        return res.status(200).json({message : "User login successful",accessToken,user: userData});
     }catch(err){
         console.log(err);
         res.status(500).json({error : "Internal server error"});

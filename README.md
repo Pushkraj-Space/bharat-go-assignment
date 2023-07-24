@@ -93,7 +93,7 @@ Authenticate and generate a JWT token for the user.
 | Field     | Type     | Description                   |
 |-----------|----------|-------------------------------|
 | email     | string   | User's registered email       |
-| password  | string   | User's password (plaintext)    |
+| password  | string   | User's password   |
 
 #### Response
 
@@ -109,4 +109,31 @@ Upon successful login, the API will return a response with status code 200 and t
     "id" : "user_id"
   } 
 }
+```
+## GET /users
+
+Retrieve a list of all users.
+
+- **Method:** GET
+- **Endpoint:** /users
+
+#### Response
+
+Upon successful retrieval, the API will return a response with status code 200 and the following JSON data:
+
+```json
+[
+    {
+        "name": "user_name",
+        "email": "user_mail",
+        "password": "user_password",
+        "id": "user_id"
+    },
+    {
+        "name": "user_name",
+        "email": "user_mail",
+        "password": "user_password",
+        "id": "user_id"
+    }
+]
 ```

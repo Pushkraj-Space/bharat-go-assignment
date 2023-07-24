@@ -1,18 +1,8 @@
-# bharat-go-assignment
+# Bharat-Go-assignment
 ## Start this project locally
-To run this project, you must have installed nodejs and postgresql.
+requirements : Install node.js and postgresql 
 
-Version of Node.js:
-```
-node --version
-v18.14.0
-```
-Version of PostgreSQL:
-```
-psql --version
-psql (PostgreSQL) 15.3
-```
-## Setup Server
+## Setup 
 Open your terminal (cmd, powershell, git bash)
 Clone this repository by :
 ```
@@ -50,7 +40,22 @@ DB_DATABASE = "bharat_go" //the db_name you choose in 1st step
 DB_PASSWORD = "root123" //password of your PostgreSQL database
 DB_PORT = 5432 // replace with the port on which postgresql is running.
    ```
-# API endpoints : 
+## How to use 
+Now it's time to use API endpoints.
+1. Import "Bharat Go.postman_collection.json" file to postman(find in cloned folder).
+2. setup port variable in postman according to your settings.
+3. start node.js server
+```
+npm start
+```
+4. Refer below API documentation for simplicity.
+
+## Run mocha test 
+```
+npm test
+```
+
+## API Documentation : 
 
 ### POST /auth/register
 
@@ -63,13 +68,13 @@ Register a new user.
 
 | Field     | Type     | Description                   |
 |-----------|----------|-------------------------------|
-| username  | string   | User's desired username       |
+| name  | string   | User's desired username       |
 | email     | string   | User's email address          |
 | password  | string   | User's password (plaintext)    |
 
 #### Response
 
-Upon successful registration, the API will return a response with status code 200 and the following JSON data:
+Upon successful registration, the API will return a response with status code 201 and the following JSON data:
 
 ```json
 {

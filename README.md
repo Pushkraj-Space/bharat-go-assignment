@@ -1,6 +1,5 @@
 # Bharat-Go-assignment
-## Start this project locally
-requirements : Install node.js and postgresql 
+Start this project locally requirements : Install node.js and postgresql 
 
 ## Setup 
 Open your terminal (cmd, powershell, git bash)
